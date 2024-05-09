@@ -1,0 +1,116 @@
+\documentclass{article}
+%encoding
+%--------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%--------------------------------------
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mate-mática recu-perar}
+%--------------------------------------
+
+
+\title{Explorando o Potencial do Aprendizado Federado na Análise de Motores Elétricos}
+
+\author{Orientador: Prof. Rodrigo Cesar Pedrosa Silva \\
+}
+
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Resumo}
+
+Motores elétricos desempenham um papel fundamental em várias aplicações, afetando diretamente a eficiência e a sustentabilidade energética. O projeto em questão visa investigar o uso do aprendizado federado na criação de modelos de aprendizado de máquina para a análise de motores elétricos. Devido à natureza sensível dos dados envolvidos, o aprendizado federado permite que vários clientes colaborem na construção de um modelo central sem compartilhar dados brutos. Os objetivos incluem testar diferentes modelos de aprendizado federado, identificar desafios técnicos e analisar a eficiência do processamento dos dados. A relevância deste projeto reside no potencial que esta tecnologia tem para a criação de modelos de aprendizado federado de grande porte que por sua vez podem acelerar o processo de projeto de análise de motores elétricos. As atividades envolvem revisão bibliográfica, desenvolvimento de modelos, treinamento, avaliação de desempenho e documentação. O projeto busca contribuir para a indústria de motores elétricos e promover pesquisas futuras em aprendizado federado e engenharia elétrica.
+
+\section*{Palavras-chave}
+
+Aprendizado Federado, Aprendizado de Máquina, Motores Elétricos, Eficiência Energética
+    
+\section{Introdução} 
+
+Motores elétricos são componentes cruciais em diversas aplicações industriais e de consumo, e sua eficiência e confiabilidade têm impactos diretos na sustentabilidade e no desempenho energético. A inovação e o desenvolvimento desses sistemas, com complexidade crescente ao longo do tempo, têm sido apoiados cada vez mais por algoritmos de aprendizado de máquina (ML) \cite{silva2018multiple,khan2019deep,raia2023multiattribute}. 
+
+Motores elétricos, contudo, variam grandemente em termos de design, aplicação e condições operacionais \cite{silva2018multiple,ibrahim2021surrogate}. Assim, para a contrução de um modelo de aprendizado de máquina amplamente útil, uma base de dados rica e de grande porte se faz necessária. Adquirir estes dados, entretando, é uma tarefa difícil. Os portadores de tais dados são, em geral, empresas que trabalham com o projeto de motores elétricos. Por motivos óbvios, estes não podem compartilhar informações sobre produtos que estão em desenvolvimento.
+
+Neste contexto, surge o Aprendizado Federado (FL) \cite{ZHANG2021survey}. O FL permite que um modelo seja criado com informações de vários clientes sem que os dados brutos sejam compartilhados. Cada cliente só precisa indicar como ele gostaria que o modelo fosse atualizado e um agregador se encarrega de combinar as orientações de cada cliente para construir um modelo único \cite{ZHANG2021survey,ye2023heterogeneous}. 
+
+Isso pode ser aproveitado na indústria de manufatura em cenários de colaboração interempresarial e intraempresarial \cite{islam2023applications}. Na colaboração intraempresarial, vários departamentos ou equipes dentro da mesma empresa podem trabalhar juntos usando FL para construir e treinar modelos, melhorando a eficiência e precisão do processo de manufatura. Na colaboração interempresarial, várias empresas podem trabalhar juntas para treinar um modelo global usando seus dados locais, mantendo-os privados, resultando em um modelo preciso e eficiente.
+
+Portanto, este projeto busca investigar como o aprendizado federado pode ser empregado para reunir informações de diversas fontes, preservando a segurança e a privacidade dos dados, e como essa abordagem impacta na qualidade e na precisão dos modelos de aprendizado de máquina desenvolvidos para motores elétricos. Através desta pesquisa, esperamos fornecer uma avaliação detalhada das capacidades e limitações do aprendizado federado nesse campo específico, oferecendo uma base sólida para futuros trabalhos que possam expandir e aplicar esses modelos de forma prática e inovadora.
+   
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+O objetivo central deste projeto é investigar e avaliar a viabilidade do uso do aprendizado federado na criação de modelos de aprendizado de máquina para o desempenho de motores elétricos. Isso inclui a análise da eficácia do aprendizado federado em lidar com dados distribuídos e a sua capacidade de gerar modelos precisos e confiáveis para estas aplicações específicas.
+
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}
+    \item  Testar e Comparar Modelos de Aprendizado Federado: Desenvolver e testar diferentes modelos de aprendizado de máquina dentro da arquitetura de aprendizado federado, comparando-os em termos de precisão, eficiência e praticidade. Este objetivo visa entender como diferentes abordagens de modelagem se comportam em um ambiente de aprendizado federado.
+    
+    \item Identificar Desafios e Limitações: Identificar os principais desafios, limitações e barreiras técnicas associadas à implementação do aprendizado federado para modelos de desempenho de motores elétricos. Isso inclui questões como a gestão de dados distribuídos, a eficiência computacional e a integridade dos dados.
+    
+    \item Analisar a Eficiência da Coleta e Uso de Dados: Avaliar como a coleta e o uso de dados de diferentes fontes (como diferentes tipos de motores elétricos e condições operacionais variadas) impactam a eficácia dos modelos gerados pelo aprendizado federado. O foco será entender se o aprendizado federado pode ser eficiente em ambientes com alta diversidade e volume de dados.
+    
+    \item Documentar e Disseminar Conhecimentos e Resultados: Documentar os processos, metodologias, resultados e conclusões obtidas durante o projeto, visando fornecer um guia ou referência para futuras pesquisas e aplicações práticas no campo de motores elétricos e aprendizado federado.
+
+\end{enumerate}
+   
+\section{Justificativa/Relevância}
+
+O projeto em questão, focado na aplicação do aprendizado federado na modelagem de desempenho de motores elétricos, representa uma iniciativa de ponta na interseção da inovação tecnológica e da inteligência artificial. A escolha do aprendizado federado, uma fronteira emergente na IA \cite{peter2021advances,ye2023heterogeneous}, não só destaca o caráter inovador do projeto, mas também responde às crescentes preocupações com a privacidade e segurança dos dados. Permitindo que os dados permaneçam em seus locais de origem.
+
+Além disso, esta abordagem é particularmente pertinente em contextos como o da indústria de motores elétricos, onde os dados estão distribuídos por diversas localidades e entidades que lidam com informações sensíveis e proprietárias. Este projeto não só visa aprimorar a eficiência e a precisão dos modelos de desempenho de motores elétricos, mas também tem o potencial de influenciar positivamente o consumo de energia e reduzir as emissões de carbono, dado o papel crucial que os motores elétricos desempenham em muitos setores.
+
+A relevância do projeto estende-se à contribuição para a indústria de motores elétricos, oferecendo insights que podem levar a melhorias significativas no processo de projeto e análise. Além disso, o projeto promete contribuir significativamente para a literatura acadêmica e para o setor de IA, especialmente nas áreas de aprendizado federado e sua aplicação na engenharia elétrica, fomentando pesquisas futuras e desenvolvimentos tecnológicos.
+
+Em resumo, este projeto não apenas busca uma  nova aplicação tecnológica promissora, mas também atende a necessidades práticas e estratégicas no âmbito da indústria de motores elétricos e do campo mais amplo da inteligência artificial, alinhando-se com as tendências globais de inovação, sustentabilidade e segurança de dados.
+
+\section{Atividades/Metodologias}
+
+\begin{enumerate}
+    
+\item Revisão Bibliográfica e Teórica: Realizar uma revisão abrangente da literatura existente sobre aprendizado federado, modelos de aprendizado de máquina aplicados a motores elétricos e desafios associados à modelagem de dados distribuídos.
+
+\item Desenvolvimento da Arquitetura de Aprendizado Federado: Identificar fontes de dados apropriadas, garantindo uma variedade de tipos de motores elétricos e condições operacionais.
+
+\item Configuração do Ambiente: Configurar um ambiente de teste simulado ou real para o aprendizado federado, assegurando a integração adequada das fontes de dados.
+
+\item Desenvolvimento de Modelos: Criar modelos iniciais de aprendizado de máquina apropriados para a análise de desempenho de motores elétricos.
+
+\item Treinamento dos Modelos: Executar o treinamento dos modelos em um ambiente de aprendizado federado, ajustando os parâmetros conforme necessário para otimizar a performance.
+
+\item Avaliação de Desempenho: Avaliar o desempenho dos modelos em termos de precisão, eficiência e robustez.
+
+\item Comparação com Modelos Centralizados: comparar os resultados obtidos com aqueles de modelos centralizados tradicionais para avaliar as vantagens e desvantagens do aprendizado federado.
+
+\item Documentação: Preparar um relatório detalhado incluindo metodologia, experimentação, análise de resultados e conclusões.
+
+\item Avaliação de Impacto e Recomendações: Avaliar o potencial impacto da implementação do aprendizado federado em ambientes de projeto de motores elétricos. Fornecer recomendações para pesquisas e aplicações futuras com base nas descobertas e experiências do projeto.
+
+\end{enumerate}
+
+
+%\section{Resultados Preliminares}
+%(Apenas em caso de renovação)
+%(Limite 1500 caracteres)	
+   
+ 
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

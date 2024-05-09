@@ -1,0 +1,111 @@
+\documentclass{article}
+%encoding
+%--------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%--------------------------------------
+
+%English-specific commands
+%--------------------------------------
+\usepackage[english]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mathe-matics re-cover}
+%--------------------------------------
+
+\title{Exploring the Potential of Federated Learning in Electric Motor Analysis}
+
+\author{Supervisor: Prof. Rodrigo Cesar Pedrosa Silva \\
+}
+
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+
+Electric motors play a fundamental role in various applications, directly affecting energy efficiency and sustainability. This project aims to investigate the use of federated learning in creating machine learning models for the analysis of electric motors. Due to the sensitive nature of the involved data, federated learning allows multiple clients to collaborate on building a central model without sharing raw data. Objectives include testing different federated learning models, identifying technical challenges, and analyzing data processing efficiency. The relevance of this project lies in the potential of this technology to create large-scale models, which in turn can accelerate the electric motor analysis and design processes.
+
+\section*{Keywords}
+
+Federated Learning, Machine Learning, Electric Motors, Energy Efficiency
+
+\section{Introduction}
+
+Electric motors are crucial components in various industrial and consumer applications, and their performance and reliability have direct impacts on sustainability and energy efficiency. The innovation and development of these systems, with increasing complexity over time, have been increasingly supported by machine learning (ML) algorithms \cite{silva2018multiple,khan2019deep,raia2023multiattribute}.
+
+However, electric motors vary greatly in terms of design, application, and operating conditions \cite{silva2018multiple,ibrahim2021surrogate}. Thus, for the construction of a broadly useful machine learning model, a rich and large database is necessary. Acquiring these data, however, is a difficult task. The holders of such data are generally companies working on electric motor design. For obvious reasons, they cannot share information about products in development.
+
+In this context, Federated Learning (FL) arises \cite{ZHANG2021survey}. FL allows a model to be created with information from various clients without raw data being shared. Each client only needs to indicate how they would like the model to be updated, and an aggregator takes care of combining each client's guidance to build a single model \cite{ZHANG2021survey,ye2023heterogeneous}.
+
+This can be leveraged in the manufacturing industry in inter-company and intra-company collaboration scenarios \cite{islam2023applications}. In intra-company collaboration, various departments or teams within the same company can work together using FL to build and train models, improving the efficiency and accuracy of the manufacturing process. In inter-company collaboration, various companies can work together to train a global model using their local data, keeping it private, resulting in an accurate and efficient model.
+
+Therefore, this project seeks to investigate how federated learning can be employed to gather information from various sources while preserving data security and privacy, and how this approach impacts the quality and accuracy of the machine learning models developed for electric motors. Through this research, we hope to provide a detailed assessment of the capabilities and limitations of federated learning in this specific field, offering a solid foundation for future work that can expand and apply these models in a practical and innovative way.
+
+\section{Objectives}
+
+\subsection{General Objective}
+
+The central objective of this project is to investigate and evaluate the feasibility of using federated learning in the creation of machine learning models for electric motor analysis. This includes analyzing the effectiveness of federated learning in dealing with distributed data and its ability to generate accurate and reliable models in this specific applications.
+
+\subsection{Specific Objectives}
+
+\begin{enumerate}
+    \item Test and Compare Federated Learning Models: Develop and test different machine learning models within the federated learning architecture, comparing them in terms of accuracy, efficiency, and practicality. This objective aims to understand how different modeling approaches behave in a federated learning environment.
+    
+    \item Identify Challenges and Limitations: Identify the main challenges, limitations, and technical barriers associated with the implementation of federated learning for electric motor performance models. This includes issues such as the management of distributed data, computational efficiency, and data integrity.
+    
+    \item Analyze the Efficiency of Data Collection and Use: Assess how the collection and use of data from different sources (such as different types of electric motors and varied operational conditions) impact the effectiveness of the models generated by federated learning. The focus will be to understand if federated learning can be efficient in environments with high diversity and volume of data.
+
+\end{enumerate}
+
+\section{Justification/Relevance}
+
+This project, focused on the application of federated learning in the modeling of electric motor performance, represents a cutting-edge initiative at the intersection of technological innovation and artificial intelligence. The choice of federated learning, an emerging frontier in AI \cite{peter2021advances,ye2023heterogeneous}, not only highlights the innovative character of the project but also responds to growing concerns about data privacy and security, allowing data to remain at their source locations.
+
+Furthermore, this approach is particularly relevant in contexts like the electric motor industry, where data are distributed across various locations and entities dealing with sensitive and proprietary information. This project not only aims to improve the efficiency and accuracy of electric motor performance models but also has the potential to positively influence energy consumption and reduce carbon emissions, given the crucial role that electric motors play in many sectors.
+
+The relevance of the project extends to contributing to the electric motor industry, offering insights that could lead to significant improvements in the design and analysis process. Additionally, the project promises to contribute significantly to the academic literature and the AI sector, especially in the areas of federated learning and its application in electrical engineering, fostering future research and technological developments.
+
+In summary, this project not only seeks a promising new technological application but also addresses practical and strategic needs in the field of electric motors and the broader field of artificial intelligence, aligning with global trends in innovation, sustainability, and data security.
+
+\section{Activities/Methodologies}
+
+\begin{enumerate}
+    
+\item Bibliographic and Theoretical Review: Conduct a comprehensive review of existing literature on federated learning, machine learning models applied to electric motors, and challenges associated with modeling distributed data.
+
+\item Development of Federated Learning Architecture: Identify appropriate data sources, ensuring a variety of electric motor types and operational conditions.
+
+\item Environment Setup: Set up a simulated or real test environment for federated learning, ensuring proper integration of data sources.
+
+\item Model Development: Create initial machine learning models suitable for analyzing electric motor performance.
+
+\item Model Training: Execute the training of models in a federated learning environment, adjusting parameters as necessary to optimize performance.
+
+\item Performance Evaluation: Evaluate the performance of models in terms of accuracy, efficiency, and robustness.
+
+\item Comparison with Centralized Models: Compare the results obtained with those of traditional centralized models to assess the advantages and disadvantages of federated learning.
+
+\item Documentation: Prepare a detailed report including methodology, experimentation, analysis of results, and conclusions.
+
+\item Impact Assessment and Recommendations: Assess the potential impact of implementing federated learning in electric motor design environments. Provide recommendations for future research and applications based on the findings and experiences of the project.
+
+\end{enumerate}
+
+
+%\section{Preliminary Results}
+%(Only in case of renewal)
+%(Limit 1500 characters)   
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

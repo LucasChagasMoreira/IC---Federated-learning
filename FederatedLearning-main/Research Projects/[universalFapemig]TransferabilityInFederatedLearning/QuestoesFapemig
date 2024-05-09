@@ -1,0 +1,74 @@
+QUESTÃO 01 B - INGLÊS - Addressed Problems and Investigated hypotheses.*
+
+Federated learning (FL) enables multiple parties to collaboratively train a model without sharing raw data, offering an alternative to traditional centralized machine learning in scenarios where privacy, security, and regulatory constraints prevent data pooling. However, FL can increase network and communication costs and potentially slow down the learning process due to factors such as data heterogeneity, communication constraints, and partial participation. Therefore, it is crucial for participants to assess whether collaboration will yield improvements in their respective ML tasks compared to training local models independently. The problem addressed in this project is the absence of a reliable method to estimate the success of such collaboration. The hypothesis is that by developing and utilizing metrics that capture the similarity and complementarity of participants' data distributions and tasks, we can effectively estimate the potential improvement in model performance for each participant in a federated learning setting without violating privacy constraints. 
+
+QUESTÃO 03 B - INGLÊS - Importance of the studied theme.*
+
+The importance of the studied theme lies in several key areas:
+
+Enhancing Decision-Making: By providing a reliable method to estimate the benefits of FL collaboration, participants can make informed decisions about whether to engage in federated learning. This is crucial in scenarios where the costs and complexities of setting up and participating in FL are significant.
+
+Promoting Adoption of FL: A clear understanding of the potential improvements offered by FL can encourage more organizations to adopt this privacy-preserving approach, thereby advancing the field and enabling broader utilization of machine learning in sensitive or regulated domains.
+
+Optimizing Resource Allocation: With a reliable estimation method, participants can better allocate their computational and communication resources, focusing on collaborations that are likely to yield substantial benefits and avoiding those that may not be worthwhile.
+
+Improving Model Performance: By identifying and participating in collaborations where there is a high degree of complementarity and similarity in data distributions and tasks, participants can potentially achieve better model performance than they could with their local data alone.
+
+Advancing Privacy-Preserving Machine Learning: Developing methods to estimate the success of FL collaborations without violating privacy constraints contributes to the broader goal of advancing privacy-preserving machine learning techniques, which are increasingly important in a data-driven world with growing privacy concerns.
+
+Facilitating Collaborative Learning: The studied theme is important for facilitating collaborative learning in diverse fields such as healthcare, finance, and telecommunications, where data sharing is restricted due to privacy and regulatory issues.
+
+QUESTÃO 04 B - INGLÊS - General and specific objective(s).*
+
+General Objective:
+The general objective of this project is to develop a privacy-preserving framework that enables participants in a federated learning (FL) setting to reliably estimate the potential improvement in model performance resulting from collaboration, without the need for direct data exchange.
+
+Specific Objectives:
+
+- Create or adapt metrics that capture the similarity and complementarity of participants' data distributions and tasks, ensuring that these metrics can be computed in a privacy-preserving manner.
+
+- Implement a method that uses the developed metrics to quantitatively estimate the potential improvement in model performance for each participant in an FL collaboration.
+
+- Ensure that the estimation process respects privacy constraints, utilizing techniques such as secure multi-party computation, differential privacy, or homomorphic encryption.
+
+- Validate the accuracy and reliability of the estimation framework through simulations and experiments with synthetic and real-world datasets.
+
+- Ensure that the framework is scalable and can handle a large number of participants and diverse data distributions.
+
+- Test the framework's robustness against adversarial attacks and data anomalies, ensuring its reliability in real-world applications.
+
+QUESTÃO 06 B - INGLÊS - Experimental strategy or methodological approach used.*
+
+
+- Literature Review and Metric Selection:
+
+    Conduct a comprehensive literature review to identify existing metrics that capture the similarity and complementarity of data distributions and tasks. Previous work on transfer learning has derived some metrics to this end however it remains necessary to evaluate their suitability for privacy-preserving computation and adapt them to a federated learning environment.
+
+- Metric Development and Privacy Preservation:
+
+    Develop or adapt metrics to ensure they can be computed in a privacy-preserving manner using technologies such as secure multi-party computation (MPC), differential privacy (DP), or homomorphic encryption (HE). Design algorithms for the secure computation of these metrics in a federated learning setting, ensuring that no sensitive data is exposed during the process.
+
+- Estimation Framework Implementation:
+
+    Develop a method that uses the privacy-preserving metrics to estimate the potential improvement in model performance for each participant in a federated learning collaboration. This framework will be implemented using well known  and accessible software libraries such as TensorFlow Federated, Flower, or FATE for federated learning, and libraries like PyDP or Microsoft SEAL for privacy-preserving computations.
+
+- Simulation and Experimentation:
+
+    Validate the framework through experiments using benchmark datasets such as MNIST, CIFAR-10, MedMNIST for image classification tasks, with data partitioned to simulate non-IID distributions among participants, and FEMNIST (Federated Extended MNIST) and LEAF benchmark datasets for more realistic federated learning scenarios. 
+
+- Scalability and Robustness Testing:
+
+    Evaluate the scalability of the framework by testing its performance with varying numbers of participants and diverse data distributions. Assess the robustness of the framework against adversarial attacks and data anomalies using techniques like adversarial training or robust aggregation methods.
+    
+- Iterative Refinement and Validation:
+
+    Based on the results of simulations and experiments, iteratively refine the estimation framework to improve its accuracy and reliability. Conduct further testing and validation with additional datasets and scenarios to confirm the effectiveness of the refined framework.
+
+- Case Studies:
+    
+    Conduct case studies in specific domains (e.g., healthcare, finance) to demonstrate the practical applicability and benefits of the proposed framework in real-world federated learning scenarios.
+
+- Documentation and Dissemination:
+
+    Document the methodology, algorithms, and implementation details of the estimation framework. Disseminate the findings and the framework through publications, open-source repositories, and presentations at relevant conferences and workshops.
+
