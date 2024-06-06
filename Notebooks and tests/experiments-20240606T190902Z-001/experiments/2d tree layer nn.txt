@@ -1,0 +1,55 @@
+teste 10000 epochs
+2D histeresis model:
+Test MSE: 0.018000757321715355
+Test MAE: 0.022676164284348488
+Test MAPE: 11.33568286895752%
+class threeNetwork(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(threeNetwork, self).__init__()
+        self.fc1 = nn.Linear(input_size, 32)
+        self.fc2 = nn.Linear(32, 16)
+        self.fc3 = nn.Linear(16, output_size)
+        self.relu = nn.ReLU()
+
+    def forward(self, x):
+        x = self.relu(self.fc1(x))
+        x = self.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+2D joule model:
+Test MSE: 0.18971815705299377
+Test MAE: 0.028937991708517075
+Test MAPE: 12.448369711637497%
+2D total model:
+Test MSE: 0.10388906300067902
+Test MAE: 0.026175647974014282
+Test MAPE: 13.020507991313934%
+
+teste 20000 epochs
+2D histeresis model:
+Test MSE: 0.01768546923995018
+Test MAE: 0.02000361867249012
+Test MAPE: 9.759105741977692%
+2D joule model:
+Test MSE: 0.18952298164367676
+Test MAE: 0.026918968185782433
+Test MAPE: 12.90324330329895%
+2D total model:
+Test MSE: 0.10419942438602448
+Test MAE: 0.027140352874994278
+Test MAPE: 13.28229308128357%
+
+teste 30000 epochs
+2D histeresis model:
+Test MSE: 0.017692679539322853
+Test MAE: 0.019529126584529877
+Test MAPE: 8.638664335012436%
+2D joule model:
+Test MSE: 0.18942900002002716
+Test MAE: 0.029696281999349594
+Test MAPE: 15.951316058635712%
+2D total model:
+Test MSE: 0.10374212265014648
+Test MAE: 0.026474658399820328
+Test MAPE: 14.188593626022339%
