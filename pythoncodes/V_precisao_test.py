@@ -42,27 +42,6 @@ def carregar_dadosv2(train_data, test_data, test_size=0.2, random_state=42):
 
     return X_train_tensor, y_train_tensor, X_val_tensor, y_val_tensor, X_test_tensor, y_test_tensor
 
-import matplotlib.pyplot as plt
-import torch
-
-def plot_comparacao(y_true, y_pred):
-    y_true = y_true.numpy()
-    y_pred = y_pred.numpy()
-
-    plt.figure(figsize=(8, 6))
-
-    plt.scatter(y_true, y_pred, color='blue', alpha=0.5)
-
-    max_val = max(y_true.max(), y_pred.max())
-    plt.plot([0, max_val], [0, max_val], color='red', linestyle='--', linewidth=2, label='Linha de Referência')
-
-    plt.xlabel('Valores previstos')
-    plt.ylabel('valores Reais')
-    plt.title('Comparação entre Valores Reais e Valores Previstos')
-    plt.legend()
-
-
-    plt.show()
 
 
 class TwentyLayerNetwork(nn.Module):
