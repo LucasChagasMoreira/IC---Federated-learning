@@ -57,7 +57,6 @@ class RegressionModel(nn.Module):
         return self.network(x)
     
 from torch import tensor
-from torchmetrics.regression import MeanAbsolutePercentageError
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import optuna
@@ -132,19 +131,10 @@ def evaluate(model,val_set,val_target):
 
 
 def test(model,data):
-  model.eval()
-  criterion_MSE = nn.MSELoss()
-  criterion_MAE = nn.L1Loss()
-  criterion_MAPE = MeanAbsolutePercentageError()
-  with torch.no_grad():
-      predicted = model(data[0]).to(device)
-      test_loss_MSE = criterion_MSE(predicted, data[1].to(device))
-      test_loss_MAE = criterion_MAE(predicted, data[1].to(device))
-      test_loss_MAPE = criterion_MAPE(predicted, data[1].to(device))
-      print(f'MSE Test Loss: {test_loss_MSE.item():.4f}')
-      print(f'MAE Test Loss: {test_loss_MAE.item():.4f}')
-      print(f'MAPE Test Loss: {test_loss_MAPE.item():.4f}')
-  return predicted
+    model.eval()
+    with torch.no_grad():
+        predicted = model(data[0]).to(device)
+    return predicted
 
 folder_path = '..\FederatedLearning-main\Data\IPMSM_datasets\dataset_for_iron_losses_of_IPMSMs\V'
 os.chdir(folder_path)
