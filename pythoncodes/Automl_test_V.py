@@ -136,7 +136,7 @@ def test(model,data):
         predicted = model(data[0]).to(device)
     return predicted
 
-folder_path = '..\FederatedLearning-main\Data\IPMSM_datasets\dataset_for_iron_losses_of_IPMSMs\V'
+folder_path = 'IC---Federated-learning\FederatedLearning-main\Data\IPMSM_datasets\dataset_for_iron_losses_of_IPMSMs\V'
 os.chdir(folder_path)
 
 X_train_tensor, y_train_tensor, X_val_tensor, y_val_tensor, X_test_tensor, y_test_tensor = carregar_dadosv2('dados_de_treino.csv','dados_de_teste.csv')
