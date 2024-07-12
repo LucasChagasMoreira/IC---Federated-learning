@@ -99,7 +99,7 @@ def create_train_model(input_dim, output_dim, X_train, y_train, X_val, y_val):
         y_val_device = y_val.to(device)
 
         model.train()
-        for epoch in range(150):
+        for epoch in range(200):
             permutation = torch.randperm(X_train.size()[0]).to(device)
             for i in range(0, X_train.size()[0], batch_size):
                 optimizer.zero_grad()
@@ -177,7 +177,7 @@ print(input_size)
 
 study1 = optuna.create_study(direction='minimize')
 train_model = create_train_model(input_size,1,X_train_tensor, histeresis_train_tensor,X_val_tensor,histeresis_val_tensor)
-study1.optimize(train_model, n_trials=20)
+study1.optimize(train_model, n_trials=50)
 
 trial = study1.best_trial
 
