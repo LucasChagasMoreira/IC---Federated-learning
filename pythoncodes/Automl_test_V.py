@@ -131,8 +131,10 @@ def evaluate(model,val_set,val_target):
 
 
 def test(model,data):
+    model.to(device)
     model.eval()
     with torch.no_grad():
+        data = [d.to(device) for d in data]
         predicted = model(data[0]).to(device)
     return predicted
 
