@@ -291,22 +291,22 @@ print('  Params: ')
 for key, value in trial.params.items():
     print(f'    {key}: {value}')
 
-mse_h = mean_squared_error(histeresis_test_tensor, previstos_h)
-mae_h = mean_absolute_error(histeresis_test_tensor, previstos_h)
-histeresis_test_np = histeresis_test_tensor.numpy()
-previstos_np_h = previstos_h.numpy()
+mse_h = mean_squared_error(histeresis_test_tensor.cpu(), previstos_h.cpu())
+mae_h = mean_absolute_error(histeresis_test_tensor.cpu(), previstos_h.cpu())
+histeresis_test_np = histeresis_test_tensor.cpu().numpy()
+previstos_np_h = previstos_h.cpu().numpy()
 mape_h = np.mean(np.abs((histeresis_test_np - previstos_np_h) / histeresis_test_np)) * 100
 
-mse_j = mean_squared_error(joule_test_tensor, previstos_j)
-mae_j = mean_absolute_error(joule_test_tensor, previstos_j)
-joule_test_np = joule_test_tensor.numpy()
-previstos_np_j = previstos_j.numpy()
+mse_j = mean_squared_error(joule_test_tensor.cpu(), previstos_j.cpu())
+mae_j = mean_absolute_error(joule_test_tensor.cpu(), previstos_j.cpu())
+joule_test_np = joule_test_tensor.cpu().numpy()
+previstos_np_j = previstos_j.cpu().numpy()
 mape_j = np.mean(np.abs((joule_test_np - previstos_np_j) / joule_test_np)) * 100
 
-mse_t = mean_squared_error(y_test_tensor, previstos_t)
-mae_t = mean_absolute_error(y_test_tensor, previstos_t)
-total_test_np = y_test_tensor.numpy()
-previstos_np_t = previstos_t.numpy()
+mse_t = mean_squared_error(y_test_tensor.cpu(), previstos_t.cpu())
+mae_t = mean_absolute_error(y_test_tensor.cpu(), previstos_t.cpu())
+total_test_np = y_test_tensor.cpu().numpy()
+previstos_np_t = previstos_t.cpu().numpy()
 mape_t = np.mean(np.abs((total_test_np - previstos_np_t) / total_test_np)) * 100
 
 print(f'V histeresis model:')
