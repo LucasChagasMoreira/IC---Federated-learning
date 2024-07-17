@@ -181,7 +181,7 @@ print(input_size)
 
 study1 = optuna.create_study(direction='minimize')
 train_model = create_train_model(input_size,1,X_train_tensor, histeresis_train_tensor,X_val_tensor,histeresis_val_tensor)
-study1.optimize(train_model, n_trials=50)
+study1.optimize(train_model, n_trials=500)
 
 trial = study1.best_trial
 
