@@ -88,11 +88,11 @@ def create_train_model(input_dim, output_dim, X_train, y_train, X_val, y_val):
         num_layers = trial.suggest_int('num_layers', 10, 40)
         learning_rate = trial.suggest_float('learning_rate', 1e-4, 2e-4, log=True)
         batch_size = trial.suggest_int('batch_size', 512, 512)
-        weight_decay = trial.suggest_float('weight_decay', 1e-5, 1e-2)
+        #weight_decay = trial.suggest_float('weight_decay', 1e-5, 1e-2)
 
         model = RegressionModel(input_dim, hidden_dim, output_dim, num_layers).to(device)
         criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
         scheduler = ReduceLROnPlateau(optimizer, factor=0.1, patience=5)
 
         X_train_device = X_train.to(device)
@@ -311,17 +311,17 @@ total_test_np = y_test_tensor.cpu().numpy()
 previstos_np_t = previstos_t.cpu().numpy()
 mape_t = np.mean(np.abs((total_test_np - previstos_np_t) / total_test_np)) * 100
 
-print(f'V histeresis model:')
+#print(f'V histeresis model:')
 print(f'Test MSE: {mse_h}')
 print(f'Test MAE: {mae_h}')
 print(f'Test MAPE: {mape_h}%')
 
-print(f'V joule model:')
+#print(f'V joule model:')
 print(f'Test MSE: {mse_j}')
 print(f'Test MAE: {mae_j}')
 print(f'Test MAPE: {mape_j}%')
 
-print(f'V total model:')
+#print(f'V total model:')
 print(f'Test MSE: {mse_t}')
 print(f'Test MAE: {mae_t}')
 print(f'Test MAPE: {mape_t}%')
