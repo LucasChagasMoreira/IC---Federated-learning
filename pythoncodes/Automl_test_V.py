@@ -88,11 +88,11 @@ def create_train_model(input_dim, output_dim, X_train, y_train, X_val, y_val):
         num_layers = trial.suggest_int('num_layers', 10, 40)
         learning_rate = trial.suggest_float('learning_rate', 1e-4, 2e-4, log=True)
         batch_size = trial.suggest_int('batch_size', 512, 512)
-        #weight_decay = trial.suggest_float('weight_decay', 1e-5, 1e-2)
+        weight_decay = trial.suggest_float('weight_decay', 1e-5, 1e-2)
 
         model = RegressionModel(input_dim, hidden_dim, output_dim, num_layers).to(device)
         criterion = nn.MSELoss()
-        optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+        optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
         scheduler = ReduceLROnPlateau(optimizer, factor=0.1, patience=5)
 
         X_train_device = X_train.to(device)
