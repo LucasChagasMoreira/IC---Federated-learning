@@ -101,7 +101,7 @@ def create_train_model(input_dim, output_dim, X_train, y_train, X_val, y_val):
         y_val_device = y_val.to(device)
 
         model.train()
-        for epoch in range(1200):
+        for epoch in range(100):
             permutation = torch.randperm(X_train.size()[0]).to(device)
             for i in range(0, X_train.size()[0], batch_size):
                 optimizer.zero_grad()
