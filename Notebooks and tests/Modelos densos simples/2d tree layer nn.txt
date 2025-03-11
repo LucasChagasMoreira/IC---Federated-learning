@@ -1,8 +1,4 @@
-teste 10000 epochs
-2D histeresis model:
-Test MSE: 0.018000757321715355
-Test MAE: 0.022676164284348488
-Test MAPE: 11.33568286895752%
+
 class threeNetwork(nn.Module):
     def __init__(self, input_size, output_size):
         super(threeNetwork, self).__init__()
@@ -17,6 +13,11 @@ class threeNetwork(nn.Module):
         x = self.fc3(x)
         return x
 
+teste 10000 epochs
+2D histeresis model:
+Test MSE: 0.018000757321715355
+Test MAE: 0.022676164284348488
+Test MAPE: 11.33568286895752%
 2D joule model:
 Test MSE: 0.18971815705299377
 Test MAE: 0.028937991708517075
